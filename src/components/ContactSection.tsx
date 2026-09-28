@@ -90,25 +90,31 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 border-t border-slate-800/80">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="contact" className="py-24 md:py-32 bg-[#0c0c0c] border-t border-b border-white/5 relative overflow-hidden">
+      {/* Background subtle technical grid lines */}
+      <div 
+        className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" 
+        aria-hidden="true" 
+      />
+
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Direct Info & Availability */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
-              <div className="text-xs font-semibold text-blue-400 tracking-wider uppercase font-mono">
-                Initiate Conversation
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff2a2a]/10 border border-[#ff2a2a]/30 text-xs font-bold text-[#ff2a2a] uppercase tracking-wider font-mono">
+                Get in Touch
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">
-                Let's Build Something Resilient
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white font-display tracking-tight">
+                Let's Build Something Together
               </h2>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Whether you're looking for high-scale system architecture consulting, technical leadership for your engineering organization, or full-stack platform execution, my inbox is open.
+              <p className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
+                Whether you're looking for an AI-integrated application, software project collaboration, or a dedicated B.Tech engineering intern, my inbox is always open.
               </p>
             </div>
 
             {/* Direct Contact Card */}
-            <div className="bg-[#0e1422] border border-slate-800/80 rounded-xl p-6 space-y-4 shadow-lg shadow-black/20">
+            <div className="bg-white/[0.025] border border-white/10 rounded-3xl p-6 space-y-4 shadow-xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 bg-blue-600/10 border border-blue-500/20 rounded-lg text-blue-400">
@@ -508,11 +514,11 @@ export const ContactSection: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Submit Button */}
+                  {/* Submit Button matching Akash's red CTA */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 px-5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 disabled:opacity-50 cursor-pointer"
+                    className="w-full py-3.5 px-6 text-xs font-bold text-white bg-[#ff2a2a] hover:bg-[#e40014] rounded-full transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(255,42,42,0.35)] hover:shadow-[0_0_35px_rgba(255,42,42,0.5)] disabled:opacity-50 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>

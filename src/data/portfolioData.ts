@@ -372,10 +372,9 @@ export const SKILL_GROUPS: SkillGroup[] = [
   {
     category: 'Web Development',
     skills: [
-      { name: 'HTML5', level: 95, experience: 'Semantic Structure' },
-      { name: 'CSS3', level: 92, experience: 'Responsive Layouts' },
-      { name: 'React', level: 86, experience: 'Components & Hooks' },
-      { name: 'Tailwind CSS', level: 90, experience: 'Modern Styling' },
+      { name: 'HTML5', level: 68, experience: 'Semantic Structure' },
+      { name: 'CSS3', level: 64, experience: 'Responsive Layouts' },
+      { name: 'Tailwind CSS', level: 62, experience: 'Modern Styling' },
     ]
   },
   {
@@ -383,7 +382,6 @@ export const SKILL_GROUPS: SkillGroup[] = [
     skills: [
       { name: 'VS Code', level: 95, experience: 'Primary Editor' },
       { name: 'Git & GitHub (Basic)', level: 86, experience: 'Version Control' },
-      { name: 'Command Line & Linux', level: 80, experience: 'Development Setup' },
     ]
   },
   {

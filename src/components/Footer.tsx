@@ -16,48 +16,44 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAnalytics, onDownloadResum
   };
 
   return (
-    <footer className="border-t border-slate-800/80 bg-[#080c14] py-12 text-slate-400 text-xs">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Brand & Copyright */}
-        <div className="space-y-1 text-center md:text-left">
-          <div className="text-sm font-bold text-white font-display">
-            {PERSONAL_INFO.name}
-          </div>
-          <p className="text-slate-500">
-            © {new Date().getFullYear()} Deepak Mewada. All rights reserved. Built with React & Tailwind CSS.
+    <footer className="border-t border-white/10 bg-[#080808] py-14 text-zinc-400 text-xs relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Brand & Copyright matching Akash */}
+        <div className="space-y-1.5 text-center md:text-left">
+          <a
+            href="#"
+            className="text-lg font-black tracking-tight text-white hover:opacity-90 transition-opacity inline-flex items-center gap-1 group font-display"
+          >
+            <span>Deepak Mewada</span>
+            <span className="text-[#ff2a2a] text-2xl font-black">.</span>
+          </a>
+          <p className="text-zinc-500 font-normal">
+            © {new Date().getFullYear()} Deepak Mewada. All rights reserved. Built with Python, C++, React & modern web standards.
           </p>
         </div>
 
         {/* Quick Nav Links */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-slate-300 font-medium">
-          <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-          <a href="#experience" className="hover:text-white transition-colors">Experience</a>
-          <a href="#blog" className="hover:text-white transition-colors">Articles</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          <button
-            type="button"
-            onClick={onOpenAnalytics}
-            className="hover:text-white transition-colors cursor-pointer text-blue-400 font-mono"
-          >
-            Telemetry
-          </button>
-          <button
-            type="button"
-            onClick={onDownloadResume}
-            className="hover:text-white transition-colors cursor-pointer"
-          >
-            Resume
-          </button>
+        <div className="flex flex-wrap items-center justify-center gap-6 text-zinc-300 font-medium">
+          <a href="#" className="hover:text-[#ff2a2a] transition-colors">Home</a>
+          <a href="#about" className="hover:text-[#ff2a2a] transition-colors">About</a>
+          <a href="#skills" className="hover:text-[#ff2a2a] transition-colors">Skills</a>
+          <a href="#process" className="hover:text-[#ff2a2a] transition-colors">Process</a>
+          <a href="#projects" className="hover:text-[#ff2a2a] transition-colors">Projects</a>
+          <a href="#coding" className="hover:text-[#ff2a2a] transition-colors">Coding</a>
+          <a href="#experience" className="hover:text-[#ff2a2a] transition-colors">Experience</a>
+          <a href="#certificates" className="hover:text-[#ff2a2a] transition-colors">Certificates</a>
+          <a href="#contact" className="hover:text-[#ff2a2a] transition-colors">Contact</a>
         </div>
 
         {/* Socials & Back to Top */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <a
             href={PERSONAL_INFO.social.github}
             target="_blank"
             rel="noreferrer"
-            className="p-2 text-slate-400 hover:text-white transition-colors"
+            className="p-2.5 text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors"
             aria-label="GitHub Profile"
+            title={`GitHub @${PERSONAL_INFO.githubId}`}
           >
             <Github className="w-4 h-4" />
           </a>
@@ -65,8 +61,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAnalytics, onDownloadResum
             href={PERSONAL_INFO.social.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="p-2 text-slate-400 hover:text-white transition-colors"
+            className="p-2.5 text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors"
             aria-label="LinkedIn Profile"
+            title={`LinkedIn: ${PERSONAL_INFO.linkedinId}`}
           >
             <Linkedin className="w-4 h-4" />
           </a>
@@ -74,7 +71,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAnalytics, onDownloadResum
             href={PERSONAL_INFO.social.leetcode}
             target="_blank"
             rel="noreferrer"
-            className="p-2 text-slate-400 hover:text-amber-400 transition-colors"
+            className="p-2.5 text-zinc-400 hover:text-amber-400 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors"
             aria-label="LeetCode Profile"
             title={`LeetCode: @${PERSONAL_INFO.leetcodeId}`}
           >
@@ -82,8 +79,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAnalytics, onDownloadResum
           </a>
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
-            className="p-2 text-slate-400 hover:text-white transition-colors"
+            className="p-2.5 text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors"
             aria-label="Send Email"
+            title={`Email: ${PERSONAL_INFO.email}`}
           >
             <Mail className="w-4 h-4" />
           </a>
@@ -91,8 +89,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAnalytics, onDownloadResum
           <button
             type="button"
             onClick={scrollToTop}
-            className="p-2 text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-lg hover:border-slate-700 transition-colors ml-2"
+            className="p-2.5 text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors cursor-pointer ml-1"
             aria-label="Back to top of page"
+            title="Scroll to top"
           >
             <ArrowUp className="w-4 h-4" />
           </button>

@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Twilight Evening Sky -->
+    <linearGradient id="twilightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a3b50" />
+      <stop offset="40%" stop-color="#415a77" />
+      <stop offset="70%" stop-color="#778da9" />
+      <stop offset="100%" stop-color="#a3b1c6" />
+    </linearGradient>
+
+    <!-- Golden Archway & Light Tunnel -->
+    <linearGradient id="goldArch" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b8860b" />
+      <stop offset="30%" stop-color="#d4af37" />
+      <stop offset="50%" stop-color="#ffd700" />
+      <stop offset="70%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#b8860b" />
+    </linearGradient>
+
+    <!-- Canopy String Lights Glow -->
+    <radialGradient id="canopyGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#fff2a1" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#ffb703" stop-opacity="0.6" />
+      <stop offset="80%" stop-color="#fb8500" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Promenade Tile Pattern -->
+    <linearGradient id="paving" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b8c0c8" />
+      <stop offset="40%" stop-color="#cdd4db" />
+      <stop offset="100%" stop-color="#a4adb8" />
+    </linearGradient>
+
+    <!-- Deepak's Mauve/Lavender Button-Down Shirt -->
+    <linearGradient id="mauveShirt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bfa2b8" />
+      <stop offset="45%" stop-color="#a4849d" />
+      <stop offset="100%" stop-color="#84667d" />
+    </linearGradient>
+
+    <!-- Blue Jeans -->
+    <linearGradient id="jeans" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#557599" />
+      <stop offset="60%" stop-color="#3d5775" />
+      <stop offset="100%" stop-color="#283a4f" />
+    </linearGradient>
+
+    <!-- Skin -->
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dfa27f" />
+      <stop offset="100%" stop-color="#ba7a54" />
+    </linearGradient>
+
+    <!-- Hair -->
+    <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#282226" />
+      <stop offset="100%" stop-color="#120f11" />
+    </linearGradient>
+
+    <!-- Cinema Dark Vignette Overlay for Hero Background -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#080808" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#080808" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#080808" stop-opacity="0.95" />
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="1000" fill="url(#twilightSky)" />
+
+  <!-- Distant Background Elements: Construction Crane & Skyline -->
+  <path d="M220 220 L580 80 M320 220 L320 80 L350 220" stroke="#48607a" stroke-width="3" opacity="0.6" />
+  <rect x="360" y="160" width="120" height="120" fill="#3f546b" opacity="0.5" />
+  <polygon points="420,100 370,160 470,160" fill="#35485d" opacity="0.5" />
+
+  <!-- Left Building (People's Institute facade with eye mural & anchor) -->
+  <polygon points="0,150 480,320 480,680 0,650" fill="#e8dfd8" />
+  <!-- Red Roof Trim -->
+  <polygon points="0,140 480,310 480,330 0,160" fill="#c93838" />
+  <!-- Large Stylized Eye Mural on Left Wall -->
+  <g transform="translate(140, 280) scale(1.1)">
+    <path d="M0 30 Q50 0 100 30 Q50 60 0 30 Z" fill="#ffffff" stroke="#1f2d3d" stroke-width="4" />
+    <circle cx="50" cy="30" r="16" fill="#2b5988" />
+    <circle cx="50" cy="30" r="8" fill="#0d1926" />
+    <!-- Eyebrow stroke -->
+    <path d="M-5 10 Q50 -15 105 10" stroke="#1f2d3d" stroke-width="6" fill="none" stroke-linecap="round" />
+  </g>
+  <!-- Anchor Mural on Left Wall -->
+  <g transform="translate(180, 360) scale(0.9)" stroke="#2b3a4a" stroke-width="5" fill="none" stroke-linecap="round">
+    <line x1="40" y1="10" x2="40" y2="70" />
+    <circle cx="40" cy="10" r="8" />
+    <path d="M15 50 Q40 80 65 50" />
+    <line x1="20" y1="28" x2="60" y2="28" />
+  </g>
+  <!-- Poster Board on Left: People's Institute of Media Studies -->
+  <rect x="250" y="520" width="120" height="90" rx="4" fill="#1b2a47" stroke="#4a6fa5" stroke-width="2" />
+  <rect x="256" y="526" width="108" height="24" fill="#ffb703" />
+  <text x="260" y="542" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="#000">PEOPLE'S CAMPUS</text>
+  <text x="260" y="565" font-family="monospace" font-size="8" fill="#e0e0e0">Bhopal, India</text>
+
+  <!-- Right Building (Modern Glass Mall/Campus Facade) -->
+  <polygon points="1600,10 1100,260 1100,680 1600,680" fill="#334155" />
+  <!-- Glass Window Panes -->
+  <g stroke="#64748b" stroke-width="3" fill="#1e293b" opacity="0.8">
+    <rect x="1130" y="270" width="80" height="120" />
+    <rect x="1230" y="250" width="80" height="130" />
+    <rect x="1330" y="220" width="80" height="145" />
+    <rect x="1130" y="410" width="80" height="100" />
+    <rect x="1230" y="400" width="80" height="100" />
+  </g>
+  <rect x="1100" y="500" width="500" height="30" fill="#d97706" />
+
+  <!-- Center Plaza: Massive Golden Arch & Light Canopy Tunnel -->
+  <!-- Tunnel Perspective Lines -->
+  <polygon points="460,330 1120,330 960,560 620,560" fill="#1a1c23" />
+  <!-- Glowing Warm Light Canopy -->
+  <ellipse cx="790" cy="450" rx="240" ry="120" fill="url(#canopyGlow)" />
+  <!-- Festive String Light Dots Grid -->
+  <g fill="#ffea79">
+    <circle cx="650" cy="460" r="3" /> <circle cx="680" cy="445" r="3.5" /> <circle cx="710" cy="435" r="4" />
+    <circle cx="740" cy="425" r="4" /> <circle cx="770" cy="420" r="4.5" /> <circle cx="800" cy="420" r="4.5" />
+    <circle cx="830" cy="425" r="4" /> <circle cx="860" cy="435" r="4" /> <circle cx="890" cy="445" r="3.5" />
+    <circle cx="670" cy="485" r="3" /> <circle cx="710" cy="470" r="3.5" /> <circle cx="750" cy="460" r="4" />
+    <circle cx="790" cy="455" r="4.5" /> <circle cx="830" cy="460" r="4" /> <circle cx="870" cy="470" r="3.5" />
+    <circle cx="690" cy="515" r="3" /> <circle cx="740" cy="500" r="3.5" /> <circle cx="790" cy="495" r="4" />
+    <circle cx="840" cy="500" r="3.5" /> <circle cx="890" cy="515" r="3" />
+  </g>
+
+  <!-- Large Front Golden Curved Entrance Beam / Arch -->
+  <path d="M450 340 C450 250 1130 250 1130 340 L1130 390 C1130 300 450 300 450 390 Z" fill="url(#goldArch)" stroke="#92700b" stroke-width="2" />
+  <!-- Arch Supporting Golden Columns -->
+  <rect x="440" y="340" width="70" height="320" fill="url(#goldArch)" stroke="#92700b" stroke-width="1.5" />
+  <rect x="1070" y="340" width="70" height="320" fill="url(#goldArch)" stroke="#92700b" stroke-width="1.5" />
+
+  <!-- Ground / Promenade with Diamond Paving -->
+  <polygon points="0,640 1600,640 1600,1000 0,1000" fill="url(#paving)" />
+  <!-- Diamond Pavement Geometric Patterns -->
+  <g stroke="#88929e" stroke-width="2" fill="#c3cbd4" opacity="0.65">
+    <!-- Center runway diamonds -->
+    <polygon points="800,640 880,720 800,800 720,720" />
+    <polygon points="800,800 900,900 800,1000 700,900" />
+    <polygon points="620,720 700,800 620,880 540,800" />
+    <polygon points="980,720 1060,800 980,880 900,800" />
+    <polygon points="460,800 540,880 460,960 380,880" />
+    <polygon points="1140,800 1220,880 1140,960 1060,880" />
+  </g>
+
+  <!-- Background People walking in distance -->
+  <circle cx="1270" cy="620" r="14" fill="#1e293b" />
+  <path d="M1250 635 L1290 635 L1295 720 L1245 720 Z" fill="#0f172a" />
+  <circle cx="1320" cy="625" r="13" fill="#884a39" />
+  <path d="M1305 640 L1335 640 L1340 720 L1300 720 Z" fill="#6d392c" />
+
+  <!-- ================= DEEPAK MEWADA IN CENTER ================= -->
+  <!-- Standing Confidently with Folded Arms in Foreground -->
+  <g id="deepak-standing" transform="translate(680, 390)">
+    <!-- Shadow under feet -->
+    <ellipse cx="120" cy="590" rx="90" ry="18" fill="#1b2430" opacity="0.45" />
+
+    <!-- Blue Jeans Legs -->
+    <path d="M78 440 L70 590 L108 590 L115 440 Z" fill="url(#jeans)" />
+    <path d="M125 440 L132 590 L170 590 L162 440 Z" fill="url(#jeans)" />
+    <!-- Denim folds & shoes -->
+    <rect x="68" y="585" width="42" height="15" rx="5" fill="#1c2430" />
+    <rect x="130" y="585" width="42" height="15" rx="5" fill="#1c2430" />
+
+    <!-- Mauve / Lavender Shirt Body -->
+    <path d="M45 130 C55 95 185 95 195 130 L185 285 C185 300 55 300 55 285 Z" fill="url(#mauveShirt)" />
+    
+    <!-- Folded Arms & Forearms in Front of Chest -->
+    <!-- Left Arm folded across -->
+    <path d="M45 130 C30 160 30 200 65 220 L175 220 C185 210 180 185 155 185 L85 185 Z" fill="url(#mauveShirt)" stroke="#684a62" stroke-width="1.5" />
+    <!-- Right Arm folded over left -->
+    <path d="M195 130 C210 160 210 200 175 220 L75 220 C60 220 60 190 85 190 L160 190 Z" fill="url(#mauveShirt)" stroke="#684a62" stroke-width="1.5" />
+
+    <!-- Exposed wrists & hands resting on opposite forearms -->
+    <ellipse cx="78" cy="205" rx="14" ry="10" fill="url(#skin)" />
+    <ellipse cx="162" cy="205" rx="14" ry="10" fill="url(#skin)" />
+    <!-- Black Smartwatch on Left Wrist -->
+    <rect x="70" y="200" width="16" height="8" rx="2" fill="#111" />
+
+    <!-- Shirt Collar & Center Placket -->
+    <polygon points="120,135 90,105 105,95 120,115 135,95 150,105" fill="#d1b7cb" stroke="#7e5d76" stroke-width="1.5" />
+    <line x1="120" y1="130" x2="120" y2="280" stroke="#7e5d76" stroke-width="2" />
+    <circle cx="120" cy="150" r="2.5" fill="#2d1d29" />
+    <circle cx="120" cy="245" r="2.5" fill="#2d1d29" />
+    <circle cx="120" cy="270" r="2.5" fill="#2d1d29" />
+
+    <!-- Neck -->
+    <rect x="106" y="70" width="28" height="40" rx="5" fill="url(#skin)" />
+
+    <!-- Head & Face -->
+    <ellipse cx="80" cy="48" rx="8" ry="14" fill="url(#skin)" />
+    <ellipse cx="160" cy="48" rx="8" ry="14" fill="url(#skin)" />
+    <path d="M85 30 C82 0 158 0 155 30 C155 65 142 85 120 85 C98 85 85 65 85 30 Z" fill="url(#skin)" />
+
+    <!-- Short stylish dark hair -->
+    <path d="M80 25 C78 -8 162 -8 160 25 C154 10 145 -3 120 -3 C95 -3 86 10 80 25 Z" fill="url(#hair)" />
+    <path d="M86 0 C100 -14 140 -14 154 0 C145 -8 135 -10 120 -10 C105 -10 95 -8 86 0 Z" fill="#3d333b" />
+
+    <!-- Eyebrows -->
+    <path d="M96 28 Q108 24 114 28" stroke="#161215" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M144 28 Q132 24 126 28" stroke="#161215" stroke-width="3" stroke-linecap="round" fill="none" />
+
+    <!-- Eyes -->
+    <circle cx="106" cy="34" r="3.5" fill="#24150e" />
+    <circle cx="107" cy="33" r="1.2" fill="#fff" />
+    <circle cx="134" cy="34" r="3.5" fill="#24150e" />
+    <circle cx="135" cy="33" r="1.2" fill="#fff" />
+
+    <!-- Nose -->
+    <path d="M120 30 L118 45 L122 45 Z" fill="#9e5a32" opacity="0.4" />
+    <path d="M117 45 Q120 48 123 45" stroke="#7c3d18" stroke-width="1.8" fill="none" stroke-linecap="round" />
+
+    <!-- Trimmed Neat Beard & Mustache -->
+    <path d="M110 52 Q120 48 130 52 Q120 57 110 52 Z" fill="#140f12" />
+    <path d="M112 56 Q120 60 128 56" stroke="#873c2a" stroke-width="2" fill="none" stroke-linecap="round" />
+    <!-- Beard along jawline -->
+    <path d="M88 42 C87 62 105 82 120 82 C135 82 153 62 152 42 C148 60 133 76 120 76 C107 76 92 60 88 42 Z" fill="#140f12" opacity="0.9" />
+    <ellipse cx="120" cy="72" rx="8" ry="5" fill="#140f12" />
+  </g>
+
+  <!-- Bottom-left signature tag as in original photo: REDMI NOTE 13 5G | DEEPAK -->
+  <g transform="translate(60, 930)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#ffffff" letter-spacing="1.5">REDMI NOTE 13 5G</text>
+    <text x="0" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#ffffff" letter-spacing="1">DEEPAK 💖🫶</text>
+  </g>
+
+  <!-- Dark Cinematic Gradient Overlay for Web UI legibility -->
+  <rect width="1600" height="1000" fill="url(#vignette)" />
+</svg>

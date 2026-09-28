@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Night Park Background -->
+    <radialGradient id="nightSky" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#141c24" />
+      <stop offset="60%" stop-color="#0a0d12" />
+      <stop offset="100%" stop-color="#050608" />
+    </radialGradient>
+
+    <!-- Warm Tree Lights & Bokeh -->
+    <radialGradient id="treeBokeh" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#ffe8a3" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#ffb84d" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#141c24" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Fountain Pedestal Granite -->
+    <linearGradient id="pedestal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a3038" />
+      <stop offset="50%" stop-color="#1c2126" />
+      <stop offset="100%" stop-color="#101317" />
+    </linearGradient>
+
+    <!-- Deepak's Yellow Striped Shirt -->
+    <linearGradient id="yellowShirt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faea9d" />
+      <stop offset="40%" stop-color="#f5e082" />
+      <stop offset="100%" stop-color="#dfc75f" />
+    </linearGradient>
+    <linearGradient id="yellowShirtShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d4ba4c" />
+      <stop offset="100%" stop-color="#b0962d" />
+    </linearGradient>
+
+    <!-- Blue Jeans -->
+    <linearGradient id="blueJeans" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3d6387" />
+      <stop offset="60%" stop-color="#294666" />
+      <stop offset="100%" stop-color="#1a2e45" />
+    </linearGradient>
+
+    <!-- Skin Tones -->
+    <linearGradient id="skinBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2a681" />
+      <stop offset="45%" stop-color="#d4946e" />
+      <stop offset="100%" stop-color="#b87853" />
+    </linearGradient>
+    <linearGradient id="skinHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eed1bc" />
+      <stop offset="100%" stop-color="#d4946e" />
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b36e49" />
+      <stop offset="100%" stop-color="#884928" />
+    </linearGradient>
+
+    <!-- Hair -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#322a30" />
+      <stop offset="35%" stop-color="#1f1a1d" />
+      <stop offset="100%" stop-color="#0d0b0d" />
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background: Night ambiance -->
+  <rect width="600" height="600" fill="url(#nightSky)" />
+
+  <!-- Background Tree Canopy & Foliage with Glowing Fairy Lights -->
+  <!-- Tree Leaves Canopy -->
+  <ellipse cx="300" cy="90" rx="160" ry="75" fill="#1b3624" />
+  <ellipse cx="230" cy="70" rx="110" ry="60" fill="#254a32" />
+  <ellipse cx="370" cy="80" rx="120" ry="65" fill="#1e3d29" />
+  <ellipse cx="300" cy="45" rx="90" ry="40" fill="#2f5c3e" />
+  <!-- Tree Trunk -->
+  <path d="M285 90 L280 230 L320 230 L315 90 Z" fill="#2b221a" />
+  <!-- Tree Decorative String Lights -->
+  <circle cx="300" cy="110" r="140" fill="url(#treeBokeh)" />
+  <circle cx="210" cy="85" r="4.5" fill="#fff5cc" filter="url(#softGlow)" />
+  <circle cx="245" cy="65" r="3.5" fill="#ffea9f" filter="url(#softGlow)" />
+  <circle cx="280" cy="50" r="5" fill="#fffbe6" filter="url(#softGlow)" />
+  <circle cx="330" cy="60" r="4" fill="#ffea9f" filter="url(#softGlow)" />
+  <circle cx="375" cy="75" r="4.5" fill="#ffe082" filter="url(#softGlow)" />
+  <circle cx="400" cy="100" r="3.5" fill="#fff5cc" filter="url(#softGlow)" />
+  <circle cx="295" cy="130" r="3" fill="#ffe082" />
+  <circle cx="305" cy="165" r="3" fill="#ffe082" />
+  <circle cx="290" cy="195" r="3" fill="#ffe082" />
+
+  <!-- Background Ambient Bokeh Circles from Waterfront Lights -->
+  <circle cx="90" cy="320" r="28" fill="#ffe599" opacity="0.12" />
+  <circle cx="50" cy="380" r="42" fill="#ffd166" opacity="0.08" />
+  <circle cx="510" cy="330" r="35" fill="#ffb703" opacity="0.1" />
+  <circle cx="545" cy="390" r="48" fill="#00d294" opacity="0.07" />
+
+  <!-- Circular Pedestal / Fountain Wall behind Deepak -->
+  <path d="M120 255 C120 230 480 230 480 255 L485 410 C485 435 115 435 115 410 Z" fill="url(#pedestal)" stroke="#3a4450" stroke-width="1.5" />
+  <!-- Vertical Granite Panels Lines -->
+  <path d="M180 248 L180 415" stroke="#12161a" stroke-width="2.5" opacity="0.7" />
+  <path d="M240 242 L240 422" stroke="#12161a" stroke-width="2.5" opacity="0.7" />
+  <path d="M300 240 L300 425" stroke="#12161a" stroke-width="2.5" opacity="0.7" />
+  <path d="M360 242 L360 422" stroke="#12161a" stroke-width="2.5" opacity="0.7" />
+  <path d="M420 248 L420 415" stroke="#12161a" stroke-width="2.5" opacity="0.7" />
+
+  <!-- ================= DEEPAK MEWADA ================= -->
+  <!-- Sitting Posture (Jeans / Legs) -->
+  <path d="M220 510 C210 540 235 600 255 600 L345 600 C365 600 390 540 380 510 Z" fill="url(#blueJeans)" />
+  <!-- Left Leg / Knee -->
+  <ellipse cx="245" cy="545" rx="42" ry="60" fill="url(#blueJeans)" transform="rotate(-10 245 545)" />
+  <!-- Right Leg / Knee -->
+  <ellipse cx="355" cy="545" rx="42" ry="60" fill="url(#blueJeans)" transform="rotate(10 355 545)" />
+  <!-- Denim crease highlights -->
+  <path d="M230 525 Q245 560 255 590" stroke="#527fa8" stroke-width="3" fill="none" opacity="0.4" />
+  <path d="M370 525 Q355 560 345 590" stroke="#527fa8" stroke-width="3" fill="none" opacity="0.4" />
+
+  <!-- Deepak's Yellow Striped Shirt Body -->
+  <g id="shirt">
+    <!-- Torso and Shoulders -->
+    <path d="M175 350 C185 320 240 315 300 315 C360 315 415 320 425 350 L440 480 C440 520 420 535 300 535 C180 535 160 520 160 480 Z" fill="url(#yellowShirt)" />
+
+    <!-- Left Short Sleeve & Arm -->
+    <path d="M175 350 C155 375 145 420 155 455 C165 470 195 465 200 445 L205 385 Z" fill="url(#yellowShirt)" />
+    <!-- Left Forearm (resting on knee) -->
+    <path d="M165 455 C170 485 190 550 220 575 C235 580 245 565 235 540 L200 450 Z" fill="url(#skinBase)" />
+
+    <!-- Right Short Sleeve & Arm -->
+    <path d="M425 350 C445 375 455 420 445 455 C435 470 405 465 400 445 L395 385 Z" fill="url(#yellowShirt)" />
+    <!-- Right Forearm (resting on knee) -->
+    <path d="M435 455 C430 485 410 550 380 575 C365 580 355 565 365 540 L400 450 Z" fill="url(#skinBase)" />
+
+    <!-- Distinctive Thin Dark Vertical Stripes on Yellow Shirt -->
+    <g stroke="#b89a2b" stroke-width="2.5" opacity="0.75">
+      <path d="M210 365 L200 525" />
+      <path d="M235 345 L230 530" />
+      <path d="M260 330 L260 533" />
+      <path d="M280 325 L280 534" />
+      <path d="M300 322 L300 535" />
+      <path d="M320 325 L320 534" />
+      <path d="M340 330 L340 533" />
+      <path d="M365 345 L370 530" />
+      <path d="M390 365 L400 525" />
+    </g>
+
+    <!-- Shirt Center Placket & Dark Buttons -->
+    <path d="M294 340 L294 535 L306 535 L306 340 Z" fill="#ebcf6e" stroke="#cbb139" stroke-width="1.5" />
+    <!-- Dark Buttons -->
+    <circle cx="300" cy="370" r="3.5" fill="#241d13" />
+    <circle cx="300" cy="415" r="3.5" fill="#241d13" />
+    <circle cx="300" cy="460" r="3.5" fill="#241d13" />
+    <circle cx="300" cy="505" r="3.5" fill="#241d13" />
+
+    <!-- Left Pocket Outline on Chest -->
+    <path d="M335 380 L365 380 L362 420 L338 420 Z" fill="none" stroke="#b89a2b" stroke-width="1.5" opacity="0.7" />
+
+    <!-- Shirt Collar (V-neck open style) -->
+    <polygon points="300,385 255,340 275,320 300,350 325,320 345,340" fill="#fef2b3" stroke="#cbb139" stroke-width="2" />
+  </g>
+
+  <!-- Neck -->
+  <path d="M272 265 L272 345 Q300 360 328 345 L328 265 Z" fill="url(#skinShadow)" />
+  <path d="M278 270 Q300 295 322 270 L322 340 Q300 350 278 340 Z" fill="url(#skinBase)" />
+
+  <!-- Head & Face -->
+  <g id="face">
+    <!-- Ears -->
+    <ellipse cx="218" cy="235" rx="14" ry="24" fill="url(#skinBase)" />
+    <ellipse cx="220" cy="235" rx="8" ry="14" fill="url(#skinShadow)" />
+    <ellipse cx="382" cy="235" rx="14" ry="24" fill="url(#skinBase)" />
+    <ellipse cx="380" cy="235" rx="8" ry="14" fill="url(#skinShadow)" />
+
+    <!-- Jawline & Face Silhouette matching photo -->
+    <path d="M228 190 C225 145 250 120 300 120 C350 120 375 145 372 190 C372 255 348 290 300 290 C252 290 228 255 228 190 Z" fill="url(#skinBase)" />
+    <!-- Cheek & Forehead Highlights -->
+    <ellipse cx="300" cy="165" rx="45" ry="25" fill="url(#skinHighlight)" opacity="0.5" />
+    <ellipse cx="260" cy="225" rx="20" ry="15" fill="url(#skinHighlight)" opacity="0.4" />
+    <ellipse cx="340" cy="225" rx="20" ry="15" fill="url(#skinHighlight)" opacity="0.4" />
+
+    <!-- Well-groomed Short Hair (Voluminous on top, textured, dark) -->
+    <!-- Base hair outline -->
+    <path d="M222 185 C218 135 240 95 300 90 C360 95 382 135 378 185 C370 160 355 125 300 122 C245 125 230 160 222 185 Z" fill="url(#hairGrad)" />
+    <!-- Textured voluminous top & slight quiff -->
+    <path d="M228 145 C238 92 275 80 305 80 C345 80 378 98 375 142 C362 110 330 100 300 100 C265 100 238 118 228 145 Z" fill="#2d252b" />
+    <path d="M260 95 C285 78 320 78 340 92 C325 86 280 86 260 95 Z" fill="#3d333b" />
+
+    <!-- Eyebrows (Dark, shaped, confident) -->
+    <path d="M246 190 Q270 182 284 192" stroke="#1c161a" stroke-width="5" stroke-linecap="round" fill="none" />
+    <path d="M354 190 Q330 182 316 192" stroke="#1c161a" stroke-width="5" stroke-linecap="round" fill="none" />
+
+    <!-- Expressive Almond Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="268" cy="204" rx="11" ry="7.5" fill="#fefefe" />
+    <circle cx="268" cy="204" r="5.5" fill="#2c1a11" />
+    <circle cx="268" cy="204" r="3" fill="#0d0704" />
+    <circle cx="269.5" cy="202.5" r="1.8" fill="#ffffff" />
+    <path d="M256 202 Q268 196 280 202" stroke="#1a1417" stroke-width="2.5" fill="none" />
+    <!-- Right Eye -->
+    <ellipse cx="332" cy="204" rx="11" ry="7.5" fill="#fefefe" />
+    <circle cx="332" cy="204" r="5.5" fill="#2c1a11" />
+    <circle cx="332" cy="204" r="3" fill="#0d0704" />
+    <circle cx="333.5" cy="202.5" r="1.8" fill="#ffffff" />
+    <path d="M320 202 Q332 196 344 202" stroke="#1a1417" stroke-width="2.5" fill="none" />
+
+    <!-- Nose -->
+    <path d="M300 196 L295 230 L305 230 Z" fill="#b06941" opacity="0.35" />
+    <path d="M291 229 Q300 234 309 229" stroke="#87441f" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    <!-- Nostrils -->
+    <ellipse cx="293" cy="231" rx="2" ry="1.5" fill="#5c2c12" />
+    <ellipse cx="307" cy="231" rx="2" ry="1.5" fill="#5c2c12" />
+
+    <!-- Neatly Groomed Beard & Mustache (matches Deepak's look in the photo) -->
+    <!-- Mustache -->
+    <path d="M278 247 Q300 240 322 247 Q300 256 278 247 Z" fill="#181316" />
+    
+    <!-- Lips with friendly subtle smile -->
+    <path d="M282 254 Q300 262 318 254" stroke="#944837" stroke-width="3" fill="none" stroke-linecap="round" />
+    <path d="M284 254 Q300 259 316 254" stroke="#d47968" stroke-width="1.5" fill="none" />
+
+    <!-- Trimmed Beard along Jawline & Chin -->
+    <path d="M234 218 C232 260 265 290 300 290 C335 290 368 260 366 218 C360 255 330 282 300 282 C270 282 240 255 234 218 Z" fill="#181316" opacity="0.95" />
+    <!-- Chin Beard Patch / Goatee -->
+    <ellipse cx="300" cy="272" rx="16" ry="11" fill="#181316" />
+    <!-- Underlip Soul Patch -->
+    <ellipse cx="300" cy="261" rx="4" ry="3" fill="#181316" />
+  </g>
+
+  <!-- High-Tech Verified Corner Badge -->
+  <g transform="translate(480, 480)">
+    <circle cx="30" cy="30" r="28" fill="#080808" stroke="#00d294" stroke-width="3" />
+    <circle cx="30" cy="30" r="22" fill="#00d294" />
+    <path d="M21 30 L27 36 L39 24" stroke="#080808" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- Name & Degree Tag Overlay at bottom -->
+  <g transform="translate(180, 530)">
+    <rect width="240" height="42" rx="21" fill="#080808" fill-opacity="0.9" stroke="#ffffff30" stroke-width="1.5" filter="url(#softGlow)" />
+    <circle cx="25" cy="21" r="5.5" fill="#00d294" />
+    <text x="42" y="27" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800">Deepak Mewada</text>
+    <text x="180" y="27" fill="#ff2a2a" font-family="monospace" font-size="12" font-weight="700">AIML</text>
+  </g>
+</svg>

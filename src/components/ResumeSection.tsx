@@ -32,10 +32,10 @@ interface ResumeSectionProps {
 }
 
 const STORAGE_KEYS = {
-  EXPERIENCE: 'deepak_portfolio_custom_experience_v9',
-  SKILLS: 'deepak_portfolio_custom_skills_v9',
-  EDUCATION: 'deepak_portfolio_custom_education_v9',
-  CERTS: 'deepak_portfolio_custom_certs_v9',
+  EXPERIENCE: 'deepak_portfolio_custom_experience_v11',
+  SKILLS: 'deepak_portfolio_custom_skills_v11',
+  EDUCATION: 'deepak_portfolio_custom_education_v11',
+  CERTS: 'deepak_portfolio_custom_certs_v11',
 };
 
 export const ResumeSection: React.FC<ResumeSectionProps> = ({ onPrintResume }) => {

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { trackEvent } from '../utils/analytics';
-import { BarChart3, Download, Menu, X, ArrowUpRight, Github } from 'lucide-react';
+import { useProfileAvatar } from '../utils/useProfileAvatar';
+import { Download, Menu, X, Sparkles, Send, Github } from 'lucide-react';
+import { LeetCodeIcon } from './LeetCodeIcon';
 
 interface HeaderProps {
   onOpenAnalytics: () => void;
   onDownloadResume: () => void;
   onOpenGitHubHub?: () => void;
+  onOpenAskAi?: () => void;
   activeSection: string;
 }
 
@@ -13,8 +16,10 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenAnalytics,
   onDownloadResume,
   onOpenGitHubHub,
+  onOpenAskAi,
   activeSection,
 }) => {
+  const { avatarUrl } = useProfileAvatar();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,9 +32,14 @@ export const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const navLinks = [
+    { name: 'Home', href: '#' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Process', href: '#process' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Coding', href: '#coding' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Articles', href: '#blog' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -40,113 +50,121 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 border-b ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b ${
         isScrolled
-          ? 'bg-[#0b0f17]/90 backdrop-blur-md border-slate-800/80 shadow-lg shadow-black/20 py-3.5'
-          : 'bg-[#0b0f17]/60 backdrop-blur-sm border-slate-800/40 py-4'
+          ? 'bg-[#080808]/90 backdrop-blur-md border-white/10 shadow-xl shadow-black/50 py-3.5'
+          : 'bg-[#080808]/60 backdrop-blur-sm border-white/5 py-4'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Zone 1: Single text element wordmark */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
+        {/* Brand wordmark with circular profile avatar */}
         <a
           href="#"
-          className="text-lg font-bold tracking-tight text-white hover:text-blue-400 transition-colors flex items-center gap-2 group"
+          className="text-lg sm:text-xl font-black tracking-tight text-white hover:opacity-90 transition-opacity flex items-center gap-2.5 group"
           aria-label="Deepak Mewada – Homepage"
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-blue-500 group-hover:scale-125 transition-transform" />
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-[#ff2a2a]/50 bg-zinc-800 shrink-0 shadow-sm">
+            <img
+              src={avatarUrl}
+              alt="Deepak"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/deepak-photo.svg';
+              }}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
           <span>Deepak Mewada</span>
+          <span className="text-[#ff2a2a] text-2xl font-black animate-pulse leading-none">.</span>
         </a>
 
-        {/* Zone 2: 4-6 clean text navigation links */}
+        {/* Clean text navigation links */}
         <nav
-          className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300"
+          className="hidden lg:flex items-center gap-6 text-sm font-medium text-zinc-400"
           aria-label="Main Navigation"
         >
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.substring(1);
+            const id = link.href.replace('#', '');
+            const isActive = (!id && activeSection === 'home') || activeSection === id;
             return (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => handleNavClick(link.name)}
-                className={`relative py-1 transition-colors hover:text-white ${
-                  isActive ? 'text-white font-semibold' : 'text-slate-400'
+                className={`relative py-1 text-xs uppercase tracking-wider font-semibold transition-colors hover:text-white ${
+                  isActive ? 'text-white' : 'text-zinc-400'
                 }`}
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 rounded-full" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#ff2a2a] rounded-full shadow-[0_0_8px_#ff2a2a]" />
                 )}
               </a>
             );
           })}
         </nav>
 
-        {/* Zone 3: 1-2 primary actions */}
-        <div className="hidden sm:flex items-center gap-2.5">
-          {onOpenGitHubHub && (
+        {/* Action Buttons: Ask AI + Hire Me / Contact */}
+        <div className="hidden sm:flex items-center gap-3">
+          {onOpenAskAi && (
             <button
               type="button"
-              onClick={onOpenGitHubHub}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-900/80 border border-slate-700/70 rounded-lg hover:border-slate-500 hover:text-white transition-colors cursor-pointer"
-              title="Open GitHub Developer Hub"
-              aria-label="Open GitHub Developer Hub"
+              onClick={onOpenAskAi}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-zinc-300 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all cursor-pointer hover:border-red-500/40"
+              title="Open Ask Deepak AI"
             >
-              <Github className="w-3.5 h-3.5 text-white" />
-              <span className="font-mono">GitHub Hub</span>
-              <span className="text-[10px] px-1.5 py-0.2 bg-blue-500/20 text-blue-300 rounded font-mono">
-                6
-              </span>
+              <Sparkles className="w-3.5 h-3.5 text-[#ff2a2a]" />
+              <span>Ask AI</span>
             </button>
           )}
 
-          <button
-            type="button"
-            onClick={onOpenAnalytics}
-            className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-900/80 border border-slate-700/70 rounded-lg hover:border-slate-500 hover:text-white transition-colors cursor-pointer"
-            title="Open Live Visitor Analytics"
-            aria-label="View live engagement analytics"
+          <a
+            href="https://leetcode.com/u/deepak5457/"
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 text-zinc-400 hover:text-amber-400 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors"
+            title="LeetCode @deepak5457"
+            aria-label="LeetCode Profile"
           >
-            <BarChart3 className="w-3.5 h-3.5 text-blue-400" />
-            <span className="tabular-nums">Live Analytics</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          </button>
+            <LeetCodeIcon className="w-3.5 h-3.5" />
+          </a>
 
-          <button
-            type="button"
-            onClick={onDownloadResume}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors shadow-sm shadow-blue-900/40 cursor-pointer"
+          <a
+            href="https://github.com/deepakmewada071-collab"
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors"
+            title="GitHub @deepakmewada071-collab"
+            aria-label="GitHub Profile"
           >
-            <Download className="w-3.5 h-3.5" />
-            <span>Download CV</span>
-          </button>
+            <Github className="w-3.5 h-3.5" />
+          </a>
+
+          <a
+            href="#contact"
+            onClick={() => handleNavClick('Hire Me')}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold text-white bg-[#ff2a2a] hover:bg-[#e40014] rounded-full transition-all shadow-[0_0_20px_rgba(255,42,42,0.35)] hover:shadow-[0_0_25px_rgba(255,42,42,0.5)] cursor-pointer"
+          >
+            <Send className="w-3 h-3" />
+            <span>Hire Me</span>
+          </a>
         </div>
 
         {/* Mobile menu trigger */}
-        <div className="flex items-center gap-2 sm:hidden">
-          {onOpenGitHubHub && (
+        <div className="flex items-center gap-2 lg:hidden">
+          {onOpenAskAi && (
             <button
               type="button"
-              onClick={onOpenGitHubHub}
-              className="p-2 text-slate-300 hover:text-white bg-slate-800/80 border border-slate-700 rounded-lg"
-              aria-label="Open GitHub Hub"
+              onClick={onOpenAskAi}
+              className="p-2 text-zinc-300 hover:text-white bg-white/5 border border-white/10 rounded-lg"
+              aria-label="Ask Deepak AI"
             >
-              <Github className="w-4 h-4 text-white" />
+              <Sparkles className="w-4 h-4 text-[#ff2a2a]" />
             </button>
           )}
           <button
             type="button"
-            onClick={onOpenAnalytics}
-            className="p-2 text-slate-300 hover:text-white bg-slate-800/80 border border-slate-700 rounded-lg"
-            aria-label="View analytics"
-          >
-            <BarChart3 className="w-4 h-4 text-blue-400" />
-          </button>
-
-          <button
-            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-300 hover:text-white bg-slate-800/80 border border-slate-700 rounded-lg"
+            className="p-2 text-zinc-300 hover:text-white bg-white/5 border border-white/10 rounded-lg cursor-pointer"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -157,41 +175,38 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-[#0b0f17] border-b border-slate-800 px-6 py-4 space-y-3">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => handleNavClick(link.name)}
-              className="block py-2 text-sm font-medium text-slate-300 hover:text-white"
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="pt-2 border-t border-slate-800 flex flex-col gap-2">
-            {onOpenGitHubHub && (
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenGitHubHub();
-                }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-slate-200 bg-slate-800 border border-slate-700 rounded-lg hover:text-white"
+        <div className="lg:hidden bg-[#0a0a0a] border-b border-white/10 px-6 py-5 space-y-3 shadow-2xl">
+          <div className="grid grid-cols-2 gap-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => handleNavClick(link.name)}
+                className="py-2 text-sm font-semibold text-zinc-300 hover:text-white hover:text-[#ff2a2a] transition-colors"
               >
-                <Github className="w-4 h-4" />
-                <span>Open GitHub Developer Hub</span>
-              </button>
-            )}
+                {link.name}
+              </a>
+            ))}
+          </div>
+          <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+            <a
+              href="#contact"
+              onClick={() => handleNavClick('Hire Me')}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-[#ff2a2a] hover:bg-[#e40014] rounded-xl shadow-lg shadow-red-900/40"
+            >
+              <Send className="w-3.5 h-3.5" />
+              <span>Hire Me / Get in Touch</span>
+            </a>
             <button
               type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
                 onDownloadResume();
               }}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-zinc-200 bg-white/5 border border-white/10 rounded-xl hover:text-white"
             >
-              <Download className="w-4 h-4" />
-              <span>Download CV (Printable PDF)</span>
+              <Download className="w-3.5 h-3.5" />
+              <span>Download Resume</span>
             </button>
           </div>
         </div>
